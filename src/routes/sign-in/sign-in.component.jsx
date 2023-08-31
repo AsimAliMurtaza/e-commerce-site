@@ -6,7 +6,9 @@ import {
     signInWithGoogleRedirect,
     createUserDocumentFromUserAuth
 } from '../../utils/firebase/firebase.utility';
+
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
+import Button from '../../components/button/button.component';
 
 
 const SignIn = () =>{
@@ -23,10 +25,10 @@ const SignIn = () =>{
 
     return(
         <div>
-            <h1>Sign in option</h1>
-            <button onClick={googleSignIn}>
-                Sign In
-            </button>
+            <h2>Already have an account?</h2>
+            <Button buttonType='google'  onClick={googleSignIn}>
+                Sign In With Google
+            </Button>
             <SignUpForm/>
             {/* <button onClick={signInWithGoogleRedirect}>
                 Sign In with Redirect
