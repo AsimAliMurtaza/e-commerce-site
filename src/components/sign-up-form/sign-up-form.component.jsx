@@ -61,20 +61,20 @@ const SignUpForm = ()=>{
                     name="email" 
                     value={email}/>
                 <FormInput 
-                    label="Email" 
+                    label="Password" 
                     type="password" 
                     required 
                     onChange={changeHandler} 
                     name="password" 
                     value={password}/>
                 <FormInput 
-                    label=""Confirm Password
+                    label="Confirm Password"
                     type="password" 
                     required 
                     onChange={changeHandler} 
                     name="confirmPassword" 
                     value={confirmPassword}/>
-                <button type="submit">Submit</button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     );
