@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="50px" height="39px" viewBox="0 0 50 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Group</title>
-    <desc>Created with Sketch.</desc>
-    <g id="WiP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-90.000000, -38.000000)">
-            <g id="Group" transform="translate(90.000000, 38.000000)">
-                <polygon id="Rectangle" fill="#808282" points="3 14 25 26.5 47 14 40.855176 39 9.08421785 39"></polygon>
-                <polygon id="Triangle" fill-opacity="0.262838724" fill="#101A1A" points="25 8 40 39 10 39"></polygon>
-                <circle id="Oval" fill="#5E6363" cx="2" cy="9" r="2"></circle>
-                <circle id="Oval" fill="#5E6363" cx="25" cy="2" r="2"></circle>
-                <circle id="Oval" fill="#5E6363" cx="48" cy="9" r="2"></circle>
-            </g>
-        </g>
-    </g>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="48" height="48">
+<g>
+	<path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/>
+	<g>
+		<path d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"/>
+		<path d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/>
+	</g>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </svg>
