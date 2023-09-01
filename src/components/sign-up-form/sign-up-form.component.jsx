@@ -6,30 +6,30 @@ import Button from "../button/button.component";
 
 import './sign-up-form.styles.scss';
 
-
-
+//Default values for state initialization
 const defaultFormFields = {
     displayName: '',
     email: '',
     password:'',
     confirmPassword: ''
 }
-
+// sign up form method
 const SignUpForm = ()=>{
-
+    //using useState hook to initialize state
     const [formField, setFormFields] = useState(defaultFormFields);
+    //destructuring different values from FormField
     const {displayName, email, password, confirmPassword} = formField;
-
+    //methd to reset form field after signing up
     const resetFormFields =()=>{
         setFormFields(defaultFormFields);
     }
-
+    //method to handle change. takes an event and destructure name and its value from target and changes the state
     const changeHandler = (event) =>{
         const {name, value} = event.target;
 
         setFormFields({...formField, [name]: value}); 
     }
-    
+    // async method taking an event and creating the userDocRef if passwords matches
     const handleSubmit = async (event)=>{
 
         event.preventDefault();
@@ -38,8 +38,9 @@ const SignUpForm = ()=>{
             alert("passwords do not match");
             return;
         }
-
+        //try catch to create userDoc
         try {
+            //gets a user as a response and pass it to createUserDoc method along with user object and its relevent username
             const {user} = await createAuthUserWithEmailAndPassword(email, password);
             await createUserDocumentFromUserAuth(user, {displayName});
             resetFormFields();
@@ -56,7 +57,7 @@ const SignUpForm = ()=>{
     return(
         <div className="sign-up-container">
             <h2>Don't have an account?</h2>
-            <span>Sign Up with email and password</span>
+            <span>Sign up with email and password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput 
                     label="Display Name"

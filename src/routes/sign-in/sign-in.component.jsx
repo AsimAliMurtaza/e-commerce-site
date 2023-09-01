@@ -10,14 +10,14 @@ import {
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
 import Button from '../../components/button/button.component';
 
-
+//sign in method
 const SignIn = () =>{
 
     // useEffect(async ()=>{
     //         const response = await getRedirectResult(auth);
     //         console.log(response);
     // }, []);
-
+    //this method creates userDoc using google auth provider.
     const googleSignIn = async ()=>{
         const {user} = await signInWithGooglePopup();
         const UserRefDoc = await createUserDocumentFromUserAuth({user});

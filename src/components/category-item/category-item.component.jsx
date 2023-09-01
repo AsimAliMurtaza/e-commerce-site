@@ -1,6 +1,6 @@
 import './category-item.styles.scss';
 
-
+//receives a category obejct and returns appropriate category card.
 const CategoryItem = ({category})=>{
 
     const{imageUrl, title} = category;
