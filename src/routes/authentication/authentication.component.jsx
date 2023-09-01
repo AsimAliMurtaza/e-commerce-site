@@ -8,15 +8,11 @@ import {
 } from '../../utils/firebase/firebase.utility';
 
 import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
+import SignInForm from '../../components/sign-in-form/sign-in-form.component';
 import Button from '../../components/button/button.component';
 
 //sign in method
-const SignIn = () =>{
-
-    // useEffect(async ()=>{
-    //         const response = await getRedirectResult(auth);
-    //         console.log(response);
-    // }, []);
+const Authentication = () =>{
     //this method creates userDoc using google auth provider.
     const googleSignIn = async ()=>{
         const {user} = await signInWithGooglePopup();
@@ -25,16 +21,10 @@ const SignIn = () =>{
 
     return(
         <div>
-            <h2>Already have an account?</h2>
-            <Button buttonType='google'  onClick={googleSignIn}>
-                Sign In With Google
-            </Button>
+            <SignInForm/>
             <SignUpForm/>
-            {/* <button onClick={signInWithGoogleRedirect}>
-                Sign In with Redirect
-            </button> */}
         </div>
     );
 }
 
-export default SignIn;
+export default Authentication;
