@@ -4,9 +4,14 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import '../navigation/navigation.styles.scss';
 import { UserContext } from '../../contexts/users.context';
+import { signOutUser } from '../../utils/firebase/firebase.utility';
 
 const Navigation = ()=>{
-  const {user} = useContext(UserContext);
+  const {user,setUser} = useContext(UserContext);
+  const SignOutHandler = async ()=>{
+    await signOutUser();
+    setUser(null);
+  }
   console.log(user);
     return(
       <Fragment>
@@ -18,9 +23,13 @@ const Navigation = ()=>{
             <Link className='nav-link' to= 'shop'>
             SHOP
             </Link>
-            <Link className='nav-link' to= 'auth'>
-            SIGN IN
-            </Link>
+            {user ? (
+              <span className='nav-link' onClick={SignOutHandler}>SIGN OUT</span>
+            ) : (
+              <Link className='nav-link' to= 'auth'>
+              SIGN IN
+              </Link>
+            )}
           </div>
         </div>
         <Outlet/>
