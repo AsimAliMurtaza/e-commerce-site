@@ -1,52 +1,44 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import {
   signInWithGooglePopup,
-  createUserDocumentFromUserAuth,
   SignInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utility";
 
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
-import { UserContext } from "../../contexts/users.context";
 
 import "./sign-in-form.styles.scss";
 
-//Default values for state initialization
 const defaultFormFields = {
   email: "",
   password: "",
 };
-// sign up form method
+
 const SignInForm = () => {
-  //using useState hook to initialize state
   const [formField, setFormFields] = useState(defaultFormFields);
-  const { setUser } = useContext(UserContext);
-  //destructuring different values from FormField
+
   const { email, password } = formField;
-  //methd to reset form field after signing up
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
-  //method to handle change. takes an event and destructure name and its value from target and changes the state
   const changeHandler = (event) => {
     const { name, value } = event.target;
 
     setFormFields({ ...formField, [name]: value });
   };
+
   const googleSignIn = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromUserAuth({ user });
+    await signInWithGooglePopup();
   };
-  // async method taking an event and creating the userDocRef if passwords matches
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const {user} = await SignInAuthUserWithEmailAndPassword(
+      const { user } = await SignInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      setUser(user);
       resetFormFields();
     } catch (error) {
       switch (error.code) {
