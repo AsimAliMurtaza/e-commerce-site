@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { UserContextProvider } from "./contexts/users.context";
 import { ProductsContextProvider } from "./contexts/products.context";
+import { CartContextProvider } from "./contexts/cart.context";
 
 import "./index.scss";
 
@@ -15,7 +16,9 @@ root.render(
     <BrowserRouter>
       <UserContextProvider>
         <ProductsContextProvider>
-          <App />
+          <CartContextProvider>
+            <App />
+          </CartContextProvider>
         </ProductsContextProvider>
       </UserContextProvider>
     </BrowserRouter>
